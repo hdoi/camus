@@ -1,0 +1,1 @@
+# bond type (1-> harmonic, 2-> morse), particle index A, particle index B, length, spring const, spring const2 ( morse bond only ), cutoff

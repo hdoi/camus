@@ -1,0 +1,35 @@
+&input1
+  natom                    =  4970
+  nstep_total              =  100
+  dump_ene_step            =  1000
+  dump_step                =  1000
+&end
+&data_file
+  init_pos_file            =  'pos.d_helix5000'
+  init_vel_file            =  'vel.d_helix5000'
+  aij_file                 =  'zz_aij.dat_helix5000'
+  particle_file            =  'zz_part.dat_helix5000'
+  bond_file                =  'zz_bond.dat_helix5000'
+  xyz_file                 =  '00_traj.xyz_helix5000'
+  ene_file                 =  '01_energy.dat_helix5000'
+  vel_file                 =  '02_vel.dat_helix5000'
+  pos_file                 =  '03_pos.dat_helix5000'
+  input_dump_file          =  '04_input_dump.dat_helix5000'
+&end
+&phys_param
+  box_length(1)            =  11.832550809
+  box_length(2)            =  11.832550809
+  box_length(3)            =  11.832550809
+  dt                       =  0.02
+  kb                       =  1.0
+  temperature              =  1.0
+  lambda                   =  0.65
+  rand_seed                =  5489
+&end
+&dpd_parameter
+  gamma                    =  4.2
+  cutoff                   =  1.0
+&end
+&calc_flags
+  use_random_initial_coord =  .true.
+&end

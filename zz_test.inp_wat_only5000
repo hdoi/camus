@@ -1,0 +1,35 @@
+&input1
+  natom                    =  5000
+  nstep_total              =  100
+  dump_ene_step            =  1000
+  dump_step                =  1000
+&end
+&data_file
+  init_pos_file            =  'pos.d_wat_only5000'
+  init_vel_file            =  'vel.d_wat_only5000'
+  aij_file                 =  'zz_aij.dat_wat_only5000'
+  particle_file            =  'zz_part.dat_wat_only5000'
+  bond_file                =  'zz_bond.dat_wat_only5000'
+  xyz_file                 =  '00_traj.xyz_wat_only5000'
+  ene_file                 =  '01_energy.dat_wat_only5000'
+  vel_file                 =  '02_vel.dat_wat_only5000'
+  pos_file                 =  '03_pos.dat_wat_only5000'
+  input_dump_file          =  '04_input_dump.dat_wat_only5000'
+&end
+&phys_param
+  box_length(1)            =  11.856311015
+  box_length(2)            =  11.856311015
+  box_length(3)            =  11.856311015
+  dt                       =  0.05
+  kb                       =  1.0
+  temperature              =  1.0
+  lambda                   =  0.65
+  rand_seed                =  5489
+&end
+&dpd_parameter
+  gamma                    =  6.7
+  cutoff                   =  1.0
+&end
+&calc_flags
+  use_random_initial_coord =  .true.
+&end
