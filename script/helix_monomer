@@ -1,0 +1,13 @@
+beads = 60
+bond12  = [ [1, i , i +1, 0.6, 160.0, 0] for  i  in range(beads-1)]
+bond13  = [ [1, i , i +2, 1.2, 80.0, 0 ]   for  i  in range(beads-2)]
+bond13m = [ [2, i , i +2,0.9,12.0, 8 ]   for  i  in range(beads-2)]
+bond15  = [ [2, i , i +4,0.6,12.0,  8 ]  for  i  in range(beads-4)]
+
+monomers = [
+{'name':'water','particle': ['W'], 'move' : [1],'bond'  : []}, 
+{'name':'S60', 
+'particle':['A' for i in range(beads)],
+'move':[1 for i in range(beads)],
+'bond':bond12+bond13+bond13m+bond15}
+]

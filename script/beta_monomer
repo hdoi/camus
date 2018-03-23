@@ -1,0 +1,36 @@
+def gen_bond1d( seq=[[0,1],[1,2]] , bond_const={'length':0.86, 'const':4}):
+    b_list = []
+    for i in range(len(seq)):
+        b_list.append( [seq[i][0], seq[i][1], bond_const['length'], bond_const['const'] ] )
+    return b_list
+row = 6
+column = 10
+bond_const = {'length':0.6, 'const':300}
+beads=60
+
+
+seq = [ [j, j+1] for j in range(beads-1) ]
+bond12 = gen_bond1d(seq,bond_const)
+
+bond1315 = []
+for i in range(row-1):
+    seq =   [ [j, j+2] for j in range(i*column, (i+1)*column - 2 ) ]
+    bond1315 = gen_bond1d( seq, {'length':1.2, 'const':300 })
+    seq =   [ [j, j+4] for j in range(i*column, (i+1)*column - 4 ) ]
+    bond1315 += gen_bond1d( seq, {'length':2.4, 'const':300 })
+
+bond1315_column = []
+seq =   [ [j, j+2*column] for j in range(beads - 2*column ) ]
+bond1315_column =  gen_bond1d( seq, {'length':1.2, 'const':300})
+seq =   [ [j, j+4*column] for j in range(beads - 4*column ) ]
+bond1315_column += gen_bond1d( seq, {'length':2.4, 'const':300})
+
+
+
+monomers = [
+{'name':'water','particle': ['W'], 'move' : [1],'bond'  : []}, 
+{'name':'S60', 
+'particle':['A']*beads,
+'move':[1]*beads,
+'bond':bond12+bond1315+bond1315_column}
+]

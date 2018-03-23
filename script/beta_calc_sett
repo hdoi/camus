@@ -1,0 +1,27 @@
+total_num_list = [10000]
+step_list = [10000]
+dump_ene = 1000
+dump = 1000
+density = 3.0
+default_file = {'filename': 'zz_test.inp', 'init_pos_file': 'pos.d', 'init_vel_file': 'vel.d',
+             'aij_file': 'zz_aij.dat', 'particle_file': 'zz_part.dat', 'bond_file': 'zz_bond.dat',
+             'xyz_file': '00_traj.xyz', 'ene_file': '01_energy.dat', 'vel_file': '02_vel.dat',
+             'pos_file': '03_pos.dat', 'input_dump_file': '04_input_dump.dat'}
+
+phys_param = {'x': 10, 'y': 10, 'z': 10, 'dt': 0.02, 'kb': 1.0, 'temperature': 1.0,
+              'lambda': 0.65, 'rand_seed': 5489, 'gamma': 4.2, 'cutoff': 1.0,
+              'use_random_initial_coord': '.true.'}
+aij_file = 'beta_aij.dat'
+monomer_file = 'beta_monomer'
+
+# filler add
+# gen_filler_monomer(repeat unit cell: [i,j,k], density, [inner radii, outter radii], shape: block, cylinder, cylinder_tube, name, movable: 0 is fix. 1 is move, [spring length, spring const], particle type)
+filler_monomer = [filler_gen.gen_filler_monomer([28,28,1],density, [0,0], 'block', 'silica', 0, [0.84,100],'Silica')]
+
+# in percent unit, XX = 100 -sum(monomer_ratio)
+ratio_list = [
+{'S60':1,'water' : 'solvent'}
+]
+name_tail_list = [
+'_beta'
+]

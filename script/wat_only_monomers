@@ -1,0 +1,7 @@
+# this is monomer files
+# bond type (1-> harmonic, 2-> morse), particle num A, particle num B, length, spring const, spring const2 ( morse bond only )
+# if len(bond[0][0]) == 2 : -> [bond atom1, bond atom2] : length 0.86, spring const 4.0, harmonic bond
+# if len(bond[0][0]) == 6 : specified all parameter for bond
+monomers = [ 
+{'name':'water','particle': ['W'], 'move' : [1],'bond'  : []}
+]
