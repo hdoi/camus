@@ -17,7 +17,7 @@ if __name__ == "__main__":
     argvs = sys.argv
     argc = len(argvs)
     if (argc < 2):
-        print "./gen_input.py monomer_model/calc_setting"
+        print "./gen_input.py calc_setting"
         quit()
     exec(open(argvs[1], 'r').read())
     # read aij
